@@ -1,12 +1,12 @@
-This project robust CQRS architecture,
-and security with JWT. 
-Technologies :
+<h2>This project robust CQRS architecture,
+and security with JWT.</h2>
+<h3>Technologies</h3> :
 -Asp.Net Core 7
 -Entity Framework Core
 -SQLServer
 -JWT
 
-Component and Tools:
+<h3>Component and Tools:</h3>
 
 - Design pattern 
 
