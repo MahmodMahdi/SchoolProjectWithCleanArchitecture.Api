@@ -180,13 +180,13 @@ namespace SchoolProject.Service.Implementations
 			if (instructor == null) { return false; }
 			else return true;
 		}
-		public async Task<bool> IsSupervisorIdExist(int supervisorId)
+		public async Task<bool> IsSupervisorIdExist(int? supervisorId)
 		{
 			var SupervisorId = await _instructorRepository.GetTableNoTracking()
 												  .AnyAsync(x => x.SuperVisorId!.Equals(supervisorId));
 			return SupervisorId;
 		}
-		public async Task<bool> IsDepartmentManagerIdExist(int departmentManagerId)
+		public async Task<bool> IsDepartmentManagerIdExist(int? departmentManagerId)
 		{
 			var ManagerId = await _instructorRepository.GetTableNoTracking()
 												  .AnyAsync(x => x.InstructorId.Equals(departmentManagerId));

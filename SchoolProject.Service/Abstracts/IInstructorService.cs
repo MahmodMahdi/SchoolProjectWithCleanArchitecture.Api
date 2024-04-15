@@ -14,7 +14,7 @@ namespace SchoolProject.Service.Abstracts
 		public Task<string> DeleteAsync(Instructor Instructor);
 		public Task<bool> IsPhoneExist(string phone);
 		public Task<bool> IsPhoneExcludeSelf(string phone, int id);
-		public Task<bool> IsSupervisorIdExist(int supervisorId);
-		public Task<bool> IsDepartmentManagerIdExist(int DepartmentManager);
+		public Task<bool> IsSupervisorIdExist(int? supervisorId);
+		public Task<bool> IsDepartmentManagerIdExist(int? DepartmentManager);
 	}
 }

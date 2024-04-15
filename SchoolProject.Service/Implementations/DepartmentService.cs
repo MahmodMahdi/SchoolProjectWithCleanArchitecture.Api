@@ -107,7 +107,7 @@ namespace SchoolProject.Service.Implementations
 			if (Manager == null) { return false; }
 			else return true;
 		}
-		public async Task<bool> IsDepartmentIdExist(int departmentId)
+		public async Task<bool> IsDepartmentIdExist(int? departmentId)
 		{
 			var DepartmentId = await _departmentRepository.GetTableNoTracking()
 												  .AnyAsync(x => x.DepartmentID!.Equals(departmentId));

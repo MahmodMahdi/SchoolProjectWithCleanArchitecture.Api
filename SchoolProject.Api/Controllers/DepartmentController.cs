@@ -10,7 +10,7 @@ namespace SchoolProject.Api.Controllers
 	[ApiController]
 	public class DepartmentController : AppControllerBase
 	{
-		[Authorize(Roles = "Admin,User")]
+		//[Authorize(Roles = "Admin,User")]
 		[HttpGet(Router.DepartmentRouting.GetAll)]
 		public async Task<IActionResult> GetDepartmentList()
 		{

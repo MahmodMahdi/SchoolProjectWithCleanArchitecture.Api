@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SchoolProject.Api.Base;
 using SchoolProject.Core.Features.Authentication.Commands.Models;
 using SchoolProject.Core.Features.Authentication.Queries.Dtos;
@@ -16,12 +17,14 @@ namespace SchoolProject.Api.Controllers
 			var user = NewResult(await _mediator.Send(command));
 			return user;
 		}
+		[Authorize(Roles = "Admin")]
 		[HttpPost(Router.AuthenticationRouting.RefreshToken)]
 		public async Task<IActionResult> RefreshToken([FromForm] RefreshTokenCommand command)
 		{
 			var user = NewResult(await _mediator.Send(command));
 			return user;
 		}
+		[Authorize(Roles = "Admin")]
 		[HttpPost(Router.AuthenticationRouting.ValidateToken)]
 		public async Task<IActionResult> ValidateToken([FromForm] AuthorizeUserQuery command)
 		{

@@ -36,9 +36,9 @@ namespace SchoolProject.Core.Features.Instructors.Commands.Validator
 				.NotEmpty().WithMessage(_localizer[SharedResourcesKeys.NotEmpty])
 				.NotNull().WithMessage(_localizer[SharedResourcesKeys.Required])
 				.MaximumLength(100).WithMessage(_localizer[SharedResourcesKeys.MaxLengthIs100]);
-			RuleFor(x => x.DepartmentId)
-				.NotEmpty().WithMessage(_localizer[SharedResourcesKeys.NotEmpty])
-				.NotNull().WithMessage(_localizer[SharedResourcesKeys.Required]);
+			//RuleFor(x => x.DepartmentId)
+			//	.NotEmpty().WithMessage(_localizer[SharedResourcesKeys.NotEmpty])
+			//	.NotNull().WithMessage(_localizer[SharedResourcesKeys.Required]);
 		}
 		public void ApplyCustomValidationsRules()
 		{
@@ -46,13 +46,13 @@ namespace SchoolProject.Core.Features.Instructors.Commands.Validator
 				.MustAsync(async (Key, CancellationToken) => !await _instructorService.IsPhoneExist(Key!))
 				.WithMessage(_localizer[SharedResourcesKeys.IsExist]);
 
-			RuleFor(x => x.SuperVisorId)
-				.MustAsync(async (Key, CancellationToken) => await _instructorService.IsSupervisorIdExist(Key!))
-				.WithMessage(_localizer[SharedResourcesKeys.IsNotExist]);
+			//RuleFor(x => x.SuperVisorId)
+			//.MustAsync(async (Key, CancellationToken) => await _instructorService.IsSupervisorIdExist(Key!))
+			//.WithMessage(_localizer[SharedResourcesKeys.IsNotExist]);
 
-			RuleFor(x => x.DepartmentId)
-				.MustAsync(async (Key, CancellationToken) => await _departmentService.IsDepartmentIdExist(Key!))
-				.WithMessage(_localizer[SharedResourcesKeys.IsNotExist]);
+			//RuleFor(x => x.DepartmentId)
+			//	.MustAsync(async (Key, CancellationToken) => await _departmentService.IsDepartmentIdExist(Key!))
+			//	.WithMessage(_localizer[SharedResourcesKeys.IsNotExist]);
 		}
 		#endregion
 	}

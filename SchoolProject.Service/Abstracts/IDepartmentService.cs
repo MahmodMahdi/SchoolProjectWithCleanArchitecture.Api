@@ -14,6 +14,6 @@ namespace SchoolProject.Service.Abstracts
 		public Task<bool> IsNameExist(string name);
 		public Task<bool> IsNameExcludeSelf(string name, int id);
 		public Task<bool> IsManagerExcludeSelf(int id, int InstructorManager);
-		public Task<bool> IsDepartmentIdExist(int departmentId);
+		public Task<bool> IsDepartmentIdExist(int? departmentId);
 	}
 }

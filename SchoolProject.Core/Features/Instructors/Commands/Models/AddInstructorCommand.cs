@@ -12,7 +12,7 @@ namespace SchoolProject.Core.Features.Instructors.Commands.Models
 		public string? Phone { get; set; }
 		public decimal? Salary { get; set; }
 		public IFormFile? Image { get; set; }
-		public int SuperVisorId { get; set; }
-		public int DepartmentId { get; set; }
+		public int? SuperVisorId { get; set; }
+		public int? DepartmentId { get; set; }
 	}
 }
